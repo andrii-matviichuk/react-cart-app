@@ -1,26 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+// Components
+import CartPage from './pages/CartPage';
+import PaymentPage from './pages/PaymentPage';
+// Styles
+import { GlobalStyle } from './App.styles';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <GlobalStyle />
+      <Router>
+        <Switch>
+          <Route path="/cart" exact>
+            <CartPage />
+          </Route>
+          <Route path="/payment" exact>
+            <PaymentPage />
+          </Route>
+          <Route path="/">
+            <h2>Incorrect Url</h2>
+          </Route>
+        </Switch>
+      </Router>
+    </>
   );
-}
+};
 
 export default App;

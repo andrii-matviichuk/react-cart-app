@@ -66,24 +66,27 @@ export const GlobalStyle = createGlobalStyle`
 
   .disabled_btn {
     pointer-events: none;
+    opacity: 0.7;
   }
 
   h2 {
     padding: 1rem;
   }
+
+  .container {
+    background: #ffffff;
+    color: #000000;
+    width: 70vw;
+    min-height: 80vh;
+    margin: 2rem 0;
+    border-radius: 5px;
+    -webkit-box-shadow: 2px 2px 15px 1px rgba(189, 189, 189, 1);
+    -moz-box-shadow: 2px 2px 15px 1px rgba(189, 189, 189, 1);
+    box-shadow: 2px 2px 15px 1px rgba(189, 189, 189, 1);
+  }
 `;
 
 export const CartPageContainer = styled.div`
-  background: #ffffff;
-  color: #000000;
-  width: 70vw;
-  min-height: 80vh;
-  margin: 2rem 0;
-  border-radius: 5px;
-  -webkit-box-shadow: 2px 2px 15px 1px rgba(189, 189, 189, 1);
-  -moz-box-shadow: 2px 2px 15px 1px rgba(189, 189, 189, 1);
-  box-shadow: 2px 2px 15px 1px rgba(189, 189, 189, 1);
-
   .total_price {
     align-self: flex-end;
     font-size: 2rem;
@@ -177,7 +180,7 @@ export const CartItemContainer = styled.div`
     opacity: 0.7;
   }
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 1280px) {
     height: 100%;
     overflow: scroll;
 
@@ -214,4 +217,76 @@ export const CartItemContainer = styled.div`
       min-width: 100%;
     }
   } ;
+`;
+
+export const PaymentPageContainer = styled.div`
+  width: auto !important;
+  min-height: auto !important;
+  padding: 1rem 3rem;
+  text-align: center;
+  color: #333333;
+
+  h1 {
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+  }
+
+  .btn {
+    border: none;
+    color: #ffffff;
+    background-color: #329932;
+    transition: all 0.5s ease;
+  }
+
+  .flex_row {
+    width: 300px;
+    align-items: center;
+    justify-content: space-between !important;
+    margin: 1rem 0;
+  }
+
+  .btn:hover {
+    background-color: #008000;
+  }
+
+  @media only screen and (max-width: 768px) {
+    width: 90vw;
+    padding: 1rem 2rem;
+
+    .flex_row {
+      width: 220px;
+    }
+  }
+`;
+
+export const FormContainer = styled.form`
+  width: 300px;
+  text-align: left;
+
+  input {
+    height: 40px;
+    max-width: 100%;
+    border: 1px solid #e7e7e7;
+    padding: 1rem;
+    border-radius: 4px;
+  }
+
+  label {
+    margin-bottom: 0.5rem;
+    color: #4c4c4c;
+  }
+
+  .warning {
+    margin-bottom: 1.3rem;
+    margin-top: 0.2rem;
+    color: #e50000;
+  }
+
+  p {
+    font-size: 0.8rem;
+  }
+
+  @media only screen and (max-width: 768px) {
+    width: 220px;
+  }
 `;

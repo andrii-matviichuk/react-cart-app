@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import axios from 'axios';
-import Skeleton from 'react-loading-skeleton';
 import { Link } from 'react-router-dom';
+import Skeleton from 'react-loading-skeleton';
+import axios from 'axios';
 // Components
 import CartItem, { TCartItem } from '../components/CartItem';
 // Styles
@@ -52,7 +52,7 @@ const CartPage = () => {
   };
 
   return (
-    <CartPageContainer>
+    <CartPageContainer className="container">
       <div className="flex_column">
         {cartItems.length === 0 && !isFetchingError ? (
           <h2>No items in cart.</h2>

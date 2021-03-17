@@ -32,6 +32,7 @@ const CartItem: React.FC<TCartItem> = ({
 }) => {
   const [qtyOfNights, setQtyOfNights] = useState(0);
   const [priceSum, setPriceSum] = useState(Number(0).toFixed(2));
+
   const selectOptions = [];
   for (let i = 0; i <= 14; i++) {
     selectOptions.push(
@@ -64,13 +65,16 @@ const CartItem: React.FC<TCartItem> = ({
   const nightsQtyIncreaseHandler = () => {
     if (qtyOfNights < 14) setQtyOfNights(qtyOfNights + 1);
   };
+
   const nightsQtyDecreaseHandler = () => {
     if (qtyOfNights > 0) setQtyOfNights(qtyOfNights - 1);
     setPriceSum((qtyOfNights * pricePerNight).toFixed(2));
   };
+
   const selectNightsQtyHandler = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setQtyOfNights(+e.target.value);
   };
+
   const deleteItemHandler = () => {
     const tmpCartItems = [...cartItems];
     cartItems.every((item: TCartItem, indx) => {
@@ -82,6 +86,7 @@ const CartItem: React.FC<TCartItem> = ({
     });
     setCartItems(tmpCartItems);
   };
+
   return (
     <CartItemContainer>
       <div className="flex_row">

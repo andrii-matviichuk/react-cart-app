@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Hotel Cart",
+  "name": "Hotel cart & checkout pages",
   "icons": [
     {
       "src": "favicon.ico",

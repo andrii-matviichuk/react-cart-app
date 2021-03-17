@@ -15,6 +15,7 @@ const PaymentPage = () => {
   const payButtonHandler = () => {
     console.log('We will redirect you to stripe or other payment processor');
   };
+
   return (
     <PaymentPageContainer className="container flex_column jcai_c">
       <h1>Payment Information</h1>
